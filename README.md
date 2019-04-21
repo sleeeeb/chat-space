@@ -11,6 +11,9 @@
 -   has_many  :groups
 -   has_many  :messages
 
+### index
+add_index  :name
+
 ##groupsテーブル
 
 |Column|Type|Options|
@@ -35,6 +38,9 @@
 - belongs_to :group
 - belongs_to :user
 
+### index
+add_index  :user_id,:group_id
+
 ##messagesテーブル
 
 |Column|Type|Options|
@@ -50,3 +56,6 @@ text_typeを使ってテキストの分類をしてメッセージとイメー�
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+### index
+add_index  :text,:text_type,:created_at,:user_id,:group_id
