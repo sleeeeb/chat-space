@@ -8,7 +8,7 @@
 |password|string|null: false|
 
 ### Association
--   has_many  :groups
+-   has_many  :groups, through: :members
 -   has_many  :messages
 
 ### index
@@ -23,7 +23,7 @@ add_index  :name
 
 
 ### Association
--   has_many  :users
+-   has_many  :users, through: :members
 -   has_many  :messages
 
 
