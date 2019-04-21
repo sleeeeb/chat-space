@@ -45,8 +45,8 @@
 |created_at|datetime|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-text_typeを使ってテキストの分類をしてメッセージとイメージを一つのカラムで管理しようとしています
 
+text_typeを使ってテキストの分類をしてメッセージとイメージを一つのカラムで管理しようとしています
 ### Association
 - belongs_to :group
 - belongs_to :user
