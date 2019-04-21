@@ -41,7 +41,6 @@ add_index  :name
 ### index
 add_index  :user_id,:group_id
 
-
 ##messagesテーブル
 
 |Column|Type|Options|
