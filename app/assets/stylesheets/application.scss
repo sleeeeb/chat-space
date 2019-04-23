@@ -1,14 +1,16 @@
 @import "./reset";
 
+@import "font-awesome";
+
+
 li{  float: right;
     list-style: none;
-    color: wheat;
-
 }
 
 .name{
-    float: left;
+    // float: left;
     font-size: 16px;
+// padding-right: 30px;
 
  color:#ffffff;
 }
@@ -16,7 +18,17 @@ li{  float: right;
     height: 100vh;
     width: 300px;
     float: left;
-    background-color: red;
+    // position: relative;
+    .header{
+    // padding-top: 25px;
+    height: 100px;
+    color:#ffffff;
+    background-color: #253141;
+        display: flex;
+    align-items: center;
+    margin: auto;
+    }
+
 }
 .left .main
 {
@@ -24,34 +36,81 @@ li{  float: right;
     height: calc( 100% - 72px );
     color:#ffffff;
     background-color: #2f3e51;
+    .a{
+        font-size:15px;
+        padding-top: 20px;
+    }
+    .b{
+        font-size:11px;
+        padding-top: 5px;
+        padding-bottom: 20px;
+    }
 }
-.left .header
-{   padding-top: 25px;
-    height: 47px;
-    color:#ffffff;
-    background-color: #253141;
-}
+
 .right {
     height: 100vh;
     width: calc( 100% - 300px ) ;
     float: right;
     background-color: pink;
-    color:maroon;
 
 }
-.right .header
-{
-    height: 72px;
-    color:#ffffff;
+.right .header{
+        display: flex;
+    justify-content: space-between;
+    height: 100px;
     background-color:  #fafafa;
     border-bottom: thin solid #eeeeee;
+        box-sizing: border-box;
+    .currentgroup{    box-sizing: border-box;
+    display: block;
+    }
+
+    .c{
+        font-size:20px;
+        padding-top: 35px;
+        color: #333333;
+    }
+    .d{
+        font-size:12px;
+        padding-top: 15px;
+
+        color: #999999;
+    }
+    .box{
+    box-sizing: border-box;
+    
+    .pink{
+    line-height: 40px;
+    padding:0  20px 0;
+    border: solid 1px #38aef0;
+    margin:30px 20px 0;
+    float:right;
+    text-decoration: none;
+    color: #38aef0;
+    }
+    }
 }
+
 .right .main
 {
     height: calc( 100% - 72px );
     color:thistle;
     background-color: #fafafa;
     overflow:auto;
+    }
+.left .main .a{
+    font-size:15px;
+    padding-top: 20px;
+}
+.left .main .b{
+    font-size:11px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+
+.right h1{
+    padding-left:20px;
 }
 
 
@@ -62,7 +121,15 @@ li{  float: right;
 .left h1{
     padding-left:20px;
     padding-right:20px;  }
-.left li{
-    padding-right:20px ;}
-
     
+    .awesome2{
+    float: right;
+    padding-left:5px; 
+    color: #fff;    
+}
+
+.awesome{
+        float: right;
+        padding-left:120px ;
+    color: #fff
+}

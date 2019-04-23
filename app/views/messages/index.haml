@@ -8,25 +8,28 @@
   .header
     %h1.name ケンシロウ
     %li
-      = link_to root_path do
-        %i.fa.fa-cog
+      = link_to fa_icon("edit"), root_path,class: "awesome"
+      -# = link_to root_path do
+      -#   %i.fa.fa-edit.awesome
     %li
-      = link_to root_path do
-        %i.fa.fa-edit
+      = link_to fa_icon("cog"), root_path,class: "awesome2"
+      -# = link_to root_path do
+      -#   %i.fa.fa-cog.awesome2
 
 
   .main
     - for i in 1..50
-      %h1.B Bテキストが入ります。
+      %h1.a グループ名
+      %h1.b Bテキストが入ります。
 
 
 .right
   .header
-    %h1.C Cテキストが入ります。
+    .currentgroup
+      %h1.c チーム名が入ります。
+      %h1.d C日程が入ります。
+    .box
+      = link_to 'Edit', 'http://google.co.jp',class: "pink"
   .main
     - for i in 1..50
       %h1.D Dテキストが入ります。
-      
-
-      
-    
