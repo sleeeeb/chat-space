@@ -1,1 +1,68 @@
 @import "./reset";
+
+li{  float: right;
+    list-style: none;
+    color: wheat;
+
+}
+
+.name{
+    float: left;
+    font-size: 16px;
+
+ color:#ffffff;
+}
+.left {
+    height: 100vh;
+    width: 300px;
+    float: left;
+    background-color: red;
+}
+.left .main
+{
+    overflow:auto;
+    height: calc( 100% - 72px );
+    color:#ffffff;
+    background-color: #2f3e51;
+}
+.left .header
+{   padding-top: 25px;
+    height: 47px;
+    color:#ffffff;
+    background-color: #253141;
+}
+.right {
+    height: 100vh;
+    width: calc( 100% - 300px ) ;
+    float: right;
+    background-color: pink;
+    color:maroon;
+
+}
+.right .header
+{
+    height: 72px;
+    color:#ffffff;
+    background-color:  #fafafa;
+    border-bottom: thin solid #eeeeee;
+}
+.right .main
+{
+    height: calc( 100% - 72px );
+    color:thistle;
+    background-color: #fafafa;
+    overflow:auto;
+}
+
+
+.main{
+    position: relative;
+}
+
+.left h1{
+    padding-left:20px;
+    padding-right:20px;  }
+.left li{
+    padding-right:20px ;}
+
+    

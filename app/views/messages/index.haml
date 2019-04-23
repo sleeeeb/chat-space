@@ -1,0 +1,32 @@
+%html
+  %head
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  %body
+
+
+.left
+  .header
+    %h1.name ケンシロウ
+    %li
+      = link_to root_path do
+        %i.fa.fa-cog
+    %li
+      = link_to root_path do
+        %i.fa.fa-edit
+
+
+  .main
+    - for i in 1..50
+      %h1.B Bテキストが入ります。
+
+
+.right
+  .header
+    %h1.C Cテキストが入ります。
+  .main
+    - for i in 1..50
+      %h1.D Dテキストが入ります。
+      
+
+      
+    
