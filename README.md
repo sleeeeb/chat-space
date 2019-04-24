@@ -10,7 +10,7 @@
 ### Association
 -   has_many  :groups, through: :members
 -   has_many  :messages
-
+    belongs_to :member
 ### index
 add_index  :name
 
@@ -25,7 +25,7 @@ add_index  :name
 ### Association
 -   has_many  :users, through: :members
 -   has_many  :messages
-
+-   has_many  :members
 
 ## membersテーブル
 
