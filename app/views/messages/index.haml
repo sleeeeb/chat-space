@@ -4,65 +4,49 @@
   %body
 
 .wrapper
-  .left
-    .header
-      %h1.name ケンシロウ
-      %li
-        = link_to fa_icon("edit"), root_path,class: "awesome"
-        -# = link_to root_path do
-        -#   %i.fa.fa-edit.awesome
-      %li
-        = link_to fa_icon("cog"), root_path,class: "awesome2"
-        -# = link_to root_path do
-        -#   %i.fa.fa-cog.awesome2
+  .chat-side
+    .side-header
+      %h1.side-header__username ケンシロウ
+      .item
+        %li
+          = link_to fa_icon("cog"), root_path,class: "awesome-font"
+        %li
+          = link_to fa_icon("edit"), root_path,class: "awesome-font"
 
 
-    .main
+
+    .groups
       - for i in 1..10
-        %h1.a 北斗神拳伝承者あつまれ〜！
-        %h1.b ラストメッセージが入ります。
-        %h1.a ラオウ
-        %h1.b 今日暇？
-        %h1.a 北斗神拳伝承者あつまれ〜！
-        %h1.b ラストメッセージが入ります。
-        %h1.a ラオウ
-        %h1.b 今日暇？
-        %h1.a 世紀末
-        %h1.b ラストメッセージが入ります。
+        %h1.group-name 北斗神拳伝承者あつまれ〜！
+        %h1.last-message ラストメッセージが入ります。
+        %h1.group-name ラオウ
+        %h1.last-message 今日暇？
 
-
-  .right
+  .chat-main
     .header
-      .currentgroup
-        %h1.c 北斗神拳伝承者あつまれ〜！
-        %h1.d Member： ラオウ　トキ　ジャギ　ケンシロウ
-      .box
-        = link_to 'Edit', 'http://google.co.jp',class: "pink"
-    .main
+      .current-group
+        %h1.current-group--name 北斗神拳伝承者あつまれ〜！
+        %h1.current-group--members Member： ラオウ　トキ　ジャギ　ケンシロウ
+      = link_to 'Edit', 'http://google.co.jp',class: "current-group--members-edit"
+    .messages
       - for i in 1..50
-        .messages
-          .message
-            .textgroup
-              %h1.D シン
-              %h1.E 200X/04/20(Sat) 17:36:33
-            .contents
-              %h1.F 力こそが正義！いい時代になったものだ
 
+        .message
+          .message-info
+            %h1.message-info--name シン
+            %h1.message-info--date 200X/04/20(Sat) 17:36:33
 
-        .messages
-          .message
-            .textgroup
-              %h1.D ジャギ
-              %h1.E 200X/04/20(Sat) 17:36:33
-            .contents
-              %h1.F 俺の名は
+          %h1.message-text 力こそが正義！いい時代になったものだ
+        .message
+          .message-info
+            %h1.message-info--name ジャギ
+            %h1.message-info--date 200X/04/20(Sat) 17:36:33
+          %h1.message-text 俺の名は
     .foam
 
 
 
       %form#new_message.new-message
-
-
         .input-box
           %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}
 
@@ -71,12 +55,3 @@
                 %input#message_image.image-label__input{:name => "message[image]", :type =>   "file"}
 
         %input.new-message__submit-btn{"data-disable-with" => "Send", :type =>  "submit",  :value => "Send"}
-
-        -# %form#new_message.new-message{"accept-charset" => "UTF-8", :action => "/groups/602/messages", :enctype => "multipart/form-data", :method => "post"}
-
-        -# %input{type="text"  name="message" placeholder="type a message" class: "text"}/
-        -# %input
-
-        -#   type="submit" value="SEND"　class: "submit"
-
-        -# %form class="contact-form"
