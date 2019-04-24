@@ -1,6 +1,8 @@
 @import "./reset";
 @import "font-awesome";
 
+$light-blue:#38aef0;
+
 .wrapper{
     box-sizing: border-box;
     .chat-side {
@@ -14,14 +16,14 @@
         .side-header{
             padding-right:20px ;
             height: 100px;
-            color:#ffffff;
+            color:white;
             background-color: #253141;
             display: flex;
             align-items: center;
             justify-content: space-between;
             .side-header__username{
                 font-size: 16px;
-                color:#ffffff;
+                color:white;
             }
             li{
                 float: right;
@@ -30,13 +32,13 @@
             .awesome-font{
                 float: right;
                 margin-left: 0.3rem;
-                color: #fff
+                color: white;
                 }
         }
         .groups{
             overflow:auto;
             height: calc( 100% - 100px );
-            color:#ffffff;
+            color:white;
             background-color: #2f3e51;
             .group-name{
                 font-size:15px;
@@ -79,11 +81,11 @@
             height: 40px;
             line-height: 40px;
             padding:0  20px 0;
-            border: solid 1px #38aef0;
+            border: solid 1px $light-blue;
             margin:30px 40px 0;
             float:right;
             text-decoration: none;
-            color: #38aef0;
+            color: $light-blue;
             }
         }
 
@@ -149,7 +151,7 @@
                 height: 50px;
                 padding: 0 30px;
                 margin-left: 15px;
-                background-color: #38aef0;
+                background-color: $light-blue;
                 color: white;
                 cursor: pointer;
             }
@@ -162,7 +164,7 @@
                 .image-label__input{
                     display: none;
                 }
-            }        
+            }
         }
     }
 }
