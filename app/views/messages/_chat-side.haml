@@ -2,8 +2,8 @@
   .side-header
     %h1.side-header__username ケンシロウ
     .item
-      %li
-      = link_to fa_icon("cog"), root_path,class: "awesome-font"
-      %li
-      = link_to fa_icon("edit"), root_path,class: "awesome-font"
+      %li.buttons
+      = link_to fa_icon("cog"), root_path, class: "awesome-font"
+      %li.buttons
+      = link_to fa_icon("edit"), root_path, class: "awesome-font"
   =render 'groups'
