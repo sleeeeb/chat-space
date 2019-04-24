@@ -6,7 +6,9 @@
 li{  float: right;
     list-style: none;
 }
+.wrapper{
 
+}
 .name{
     // float: left;
     font-size: 16px;
@@ -33,7 +35,7 @@ li{  float: right;
 .left .main
 {
     overflow:auto;
-    height: calc( 100% - 72px );
+    height: calc( 100% - 100px );
     color:#ffffff;
     background-color: #2f3e51;
     .a{
@@ -91,9 +93,9 @@ li{  float: right;
     }
 }
 
-.right .main
-{
-    height: calc( 100% - 72px );
+.right .main{
+    height: calc(100vh - 190px);
+
     color:thistle;
     background-color: #fafafa;
     overflow:auto;
@@ -132,4 +134,85 @@ li{  float: right;
         float: right;
         padding-left:120px ;
     color: #fff
+}
+
+
+.messages{
+
+    padding: 46px 40px 0;
+    .textgroup{
+        display: flex;
+    }
+    .D{
+        color: #333333;
+        font-size: 16px;
+        padding-bottom: 10px;
+
+    }
+    .E{
+        color:#999999 ;
+
+        font-size: 12px;
+    }
+    .F{
+        color:#434A54 ;
+        position: relative;
+        font-size: 14px;
+        padding-bottom: 40px;
+    }
+}
+
+.foam{
+    height: 90px;
+    padding: 20px 40px;
+    background-color: #ddd;
+        box-sizing: border-box;
+            display: block;    
+
+}
+.foambox{
+
+}
+
+.new-message{
+display: flex;
+    margin: 0;
+    padding: 0;
+        box-sizing: border-box;
+}
+.input-box__text {
+    height: 50px;
+    width: 100%;
+    padding: 0 40px 0 10px;
+    color: #434a54;
+    border-style: none;
+
+    box-sizing: border-box;
+}
+
+ .text{
+    display: flex;
+ }
+.new-message__submit-btn{
+width: 100px;
+    height: 50px;
+    padding: 0 30px;
+    margin-left: 15px;
+    background-color: #38aef0;
+    color: white;
+    cursor: pointer;
+}
+.input-box{
+        position: relative;
+    width: 100%;
+}
+.image-label{
+        font-size: 1.3rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.image-label__input{
+    display: none;
 }

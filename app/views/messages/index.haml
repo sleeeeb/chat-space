@@ -3,33 +3,80 @@
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   %body
 
-
-.left
-  .header
-    %h1.name ケンシロウ
-    %li
-      = link_to fa_icon("edit"), root_path,class: "awesome"
-      -# = link_to root_path do
-      -#   %i.fa.fa-edit.awesome
-    %li
-      = link_to fa_icon("cog"), root_path,class: "awesome2"
-      -# = link_to root_path do
-      -#   %i.fa.fa-cog.awesome2
-
-
-  .main
-    - for i in 1..50
-      %h1.a グループ名
-      %h1.b Bテキストが入ります。
+.wrapper
+  .left
+    .header
+      %h1.name ケンシロウ
+      %li
+        = link_to fa_icon("edit"), root_path,class: "awesome"
+        -# = link_to root_path do
+        -#   %i.fa.fa-edit.awesome
+      %li
+        = link_to fa_icon("cog"), root_path,class: "awesome2"
+        -# = link_to root_path do
+        -#   %i.fa.fa-cog.awesome2
 
 
-.right
-  .header
-    .currentgroup
-      %h1.c チーム名が入ります。
-      %h1.d C日程が入ります。
-    .box
-      = link_to 'Edit', 'http://google.co.jp',class: "pink"
-  .main
-    - for i in 1..50
-      %h1.D Dテキストが入ります。
+    .main
+      - for i in 1..10
+        %h1.a 北斗神拳伝承者あつまれ〜！
+        %h1.b ラストメッセージが入ります。
+        %h1.a ラオウ
+        %h1.b 今日暇？
+        %h1.a 北斗神拳伝承者あつまれ〜！
+        %h1.b ラストメッセージが入ります。
+        %h1.a ラオウ
+        %h1.b 今日暇？
+        %h1.a 世紀末
+        %h1.b ラストメッセージが入ります。
+
+
+  .right
+    .header
+      .currentgroup
+        %h1.c 北斗神拳伝承者あつまれ〜！
+        %h1.d Member： ラオウ　トキ　ジャギ　ケンシロウ
+      .box
+        = link_to 'Edit', 'http://google.co.jp',class: "pink"
+    .main
+      - for i in 1..50
+        .messages
+          .message
+            .textgroup
+              %h1.D シン
+              %h1.E 200X/04/20(Sat) 17:36:33
+            .contents
+              %h1.F 力こそが正義！いい時代になったものだ
+
+
+        .messages
+          .message
+            .textgroup
+              %h1.D ジャギ
+              %h1.E 200X/04/20(Sat) 17:36:33
+            .contents
+              %h1.F 俺の名は
+    .foam
+
+
+
+      %form#new_message.new-message
+
+
+        .input-box
+          %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}
+
+            %label.image-label{:for => "message_image"}
+              %i.fa.fa-image
+                %input#message_image.image-label__input{:name => "message[image]", :type =>   "file"}
+
+        %input.new-message__submit-btn{"data-disable-with" => "Send", :type =>  "submit",  :value => "Send"}
+
+        -# %form#new_message.new-message{"accept-charset" => "UTF-8", :action => "/groups/602/messages", :enctype => "multipart/form-data", :method => "post"}
+
+        -# %input{type="text"  name="message" placeholder="type a message" class: "text"}/
+        -# %input
+
+        -#   type="submit" value="SEND"　class: "submit"
+
+        -# %form class="contact-form"
