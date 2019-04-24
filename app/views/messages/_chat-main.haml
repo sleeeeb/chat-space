@@ -1,0 +1,20 @@
+.chat-main
+  .header
+    .current-group
+      %h1.current-group--name 北斗神拳伝承者あつまれ〜！
+      %h1.current-group--members Member： ラオウ　トキ　ジャギ　ケンシロウ
+    = link_to 'Edit', 'http://google.co.jp',class: "current-group--members-edit"
+  .messages
+    - for i in 1..50
+      = render 'message'
+
+  .foam
+    %form#new_message.new-message
+      .input-box
+        %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}
+
+          %label.image-label{:for => "message_image"}
+            %i.fa.fa-image
+              %input#message_image.image-label__input{:name => "message[image]", :type =>   "file"}
+
+      %input.new-message__submit-btn{"data-disable-with" => "Send", :type =>  "submit",  :value => "Send"}
