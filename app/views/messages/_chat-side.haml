@@ -7,7 +7,4 @@
       = link_to fa_icon("cog"), root_path,class: "awesome-font"
       %li
       = link_to fa_icon("edit"), root_path,class: "awesome-font"
-  .groups
-    - for i in 1..10
-      %h1.group-name ラオウ
-      %h1.last-message 今日暇？
+  =render 'groups'
