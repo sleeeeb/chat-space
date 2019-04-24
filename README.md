@@ -14,7 +14,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false |
 |name|string|null: false|
 
 
@@ -36,12 +35,12 @@
 - belongs_to :user
 
 ### index
-add_index  :user_id,:group_id
 
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
+|text|text||
 |image|string||
 |user_id|references|null: false, foreign_key: true|
 |group_id|references|null: false, foreign_key: true|
