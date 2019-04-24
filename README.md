@@ -1,24 +1,51 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false,unique: true,index:true|
 
-Things you may want to cover:
+### Association
+-   has_many  :members
+-   has_many  :groups, through: :members
+-   has_many  :messages
 
-* Ruby version
 
-* System dependencies
+##groupsテーブル
 
-* Configuration
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
 
-* Database creation
 
-* Database initialization
+### Association
+-   has_many  :members
+-   has_many  :users, through: :members
+-   has_many  :messages
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## membersテーブル
 
-* Deployment instructions
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
-* ...
+### Association
+- belongs_to :group
+- belongs_to :user
+
+### index
+
+## messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|text|text||
+|image|string||
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
+
+text_typeを使ってテキストの分類をしてメッセージとイメージを一つのカラムで管理しようとしています
+### Association
+- belongs_to :group
+- belongs_to :user
