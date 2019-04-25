@@ -8,4 +8,14 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
 
   end
+
+
+
+
+module ChatSpace
+  class Application < Rails::Application
+    config.i18n.default_locale = :ja
+  end
+end
+
 end
