@@ -22,3 +22,6 @@ doc/
 .secret
 log/development.log
 log/development.log
+.DS_Store
+.DS_Store
+.DS_Store
