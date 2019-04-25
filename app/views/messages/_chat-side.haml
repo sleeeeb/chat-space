@@ -1,0 +1,9 @@
+.chat-side
+  .chat-side--header
+    %h1.chat-side--header__username ケンシロウ
+    .item
+      %li.buttons
+      = link_to fa_icon("cog"), root_path, class: "awesome-font"
+      %li.buttons
+      = link_to fa_icon("edit"), root_path, class: "awesome-font"
+  =render 'groups'
