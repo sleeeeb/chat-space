@@ -1,0 +1,10 @@
+.chat-side
+  .chat-side--header
+    %h1.chat-side--header__username
+      = current_user.name
+    .item
+      %li.buttons
+      = link_to fa_icon("cog"), edit_user_path(current_user), class: "awesome-font"
+      %li.buttons
+      = link_to fa_icon("edit"), new_group_path, class: "awesome-font"
+  =render 'groups'
