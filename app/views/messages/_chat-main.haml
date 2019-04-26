@@ -1,9 +1,10 @@
 .chat-main
   .header
     .current-group
-      %h1.current-group--name 北斗神拳伝承者あつまれ〜！
-      %h1.current-group--members Member： ラオウ　トキ　ジャギ　ケンシロウ
-    = link_to 'Edit', 'http://google.co.jp',class: "current-group--members-edit"
+      %h1.current-group--name
+        = @group.name
+      %h1.current-group--members Member： #{@group.users.all.map { |h| h[:name] }.join(" ") }
+    = link_to 'Edit', edit_group_path(@group.id), class: "current-group--members-edit"
   .messages
     = render 'message'
 

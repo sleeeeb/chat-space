@@ -1,13 +1,11 @@
--# .groups
--#   - for i in 1..10
--#     %h1.group-name ラオウ
--#     %h1.last-message 今日暇？
-
-
 .groups
   - @groups.each do |group|
     = link_to group_messages_path(group) do
       %h1.group-name 
         =group.name
       %h1.last-message 
-        今日暇？
+        -if group.messages.present?
+          =group.messages.order("created_at DESC").first.content if group.messages.present?
+        -else
+          メッセージはありません。
+
