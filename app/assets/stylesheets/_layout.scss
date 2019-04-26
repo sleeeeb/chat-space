@@ -41,14 +41,16 @@ $alert_orange: #F35500;
     .groups{
       overflow:auto;
       height: calc( 100% - 100px );
-      color:white;
+
       background-color: #2f3e51;
       .group-name{
         font-size:15px;
+        color:white;
         padding-top: 20px;
       }
       .last-message{
         font-size:11px;
+       color:white;
         padding-top: 5px;
         padding-bottom: 20px;
       }
