@@ -1,0 +1,21 @@
+.chat-main
+  .header
+    .current-group
+      %h1.current-group--name
+        = @group.name
+      %h1.current-group--members Member： #{@group.users.all.map { |h| h[:name] }.join(" ") }
+    = link_to 'Edit', edit_group_path(@group.id), class: "current-group--members-edit"
+  .messages
+    = render 'message'
+
+  .form
+    = form_for [@group, @message] do |f|
+      .new-message
+        .input-box
+          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+          .form__mask
+            = f.label :image, class: 'image-label' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'image-label__input'
+        = f.submit 'Send', class: 'new-message__submit-btn'
+

@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups=current_user.groups.all
+    @message=Message.new
   end
 
   def create

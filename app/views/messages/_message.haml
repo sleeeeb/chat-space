@@ -1,0 +1,9 @@
+.message
+  -@messages.each do |message|
+    .message-info
+      %h1.message-info--name 
+        =message.user.name
+      %h1.message-info--date 
+        =message.created_at
+    %h1.message-text 
+      =message.content
