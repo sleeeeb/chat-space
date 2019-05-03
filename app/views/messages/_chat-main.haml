@@ -5,11 +5,11 @@
         = @group.name
       %h1.current-group--members Member： #{@group.users.all.map { |h| h[:name] }.join(" ") }
     = link_to 'Edit', edit_group_path(@group.id), class: "current-group--members-edit"
-  .messages
+  #scroll.messages
     = render 'message'
 
   .form
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message] , :html => {:id => "foo"} do |f|
       .new-message
         .input-box
           = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'

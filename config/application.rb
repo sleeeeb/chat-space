@@ -13,6 +13,7 @@ module ChatSpace
       g.helper false
       g.test_framework false
     end
+    config.action_view.automatically_disable_submit_tag = false
        config.i18n.default_locale = :ja
  end
 end
