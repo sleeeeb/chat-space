@@ -11,7 +11,7 @@ vendor/bundle
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
+/public/uploads/tmp
 # Ignore other unneeded files.
 doc/
 *.swp
@@ -22,6 +22,8 @@ doc/
 .secret
 log/development.log
 log/development.log
+.DS_Store
+.DS_Store
 .DS_Store
 .DS_Store
 .DS_Store
