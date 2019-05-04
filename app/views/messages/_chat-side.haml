@@ -6,5 +6,5 @@
       %li.buttons
       = link_to fa_icon("cog"), edit_user_path(current_user), class: "awesome-font"
       %li.buttons
-      = link_to fa_icon("edit"), new_group_path, class: "awesome-font"
+      = link_to fa_icon("edit"), new_group_path, class: "awesome-font", data: {"turbolinks" => false}
   =render 'groups'
