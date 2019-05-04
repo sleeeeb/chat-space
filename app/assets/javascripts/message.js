@@ -35,7 +35,6 @@ $(function () {
         $('.message').append(html)
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'slow');
         document.getElementById("new_message").reset();
-        $('.foam').reset();
       })
       .fail(function () {
         alert('投稿に失敗しました');
