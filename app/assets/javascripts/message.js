@@ -34,7 +34,8 @@ $(function () {
         var html = buildHTML(data);
         $('.message').append(html)
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'slow');
-        $('.input-box__text').val('')
+        document.getElementById("new_message").reset();
+        $('.foam').reset();
       })
       .fail(function () {
         alert('投稿に失敗しました');
