@@ -10,7 +10,7 @@ $(function () {
     return html;
   }
 
-  function appendProduct(user) {
+  function appendUser(user) {
     var html = `<div class="chat-group-user clearfix">
   <p class="chat-group-user__name">${user.name}</p>
   <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
@@ -36,7 +36,7 @@ $(function () {
       $("#user-search-result").empty();
       if (users.length !== 0) {
         users.forEach(function (user) {
-          var html = appendProduct(user);
+          var html = appendUser(user);
           $("#user-search-result").append(html);
         });
       }
@@ -45,28 +45,21 @@ $(function () {
         $("#user-search-result").append(html);
       }
     })
+
     .fail(function () {
       alert('ユーザー検索に失敗しました');
     })
   });
+
   $(document).on("click", ".user-search-add", function () {
     $(this).parent().remove();
-    console.log($(this).attr('data-user-name'));
-    var user = $(this).attr('data-user-name');
+    var user_name = $(this).attr('data-user-name');
     var user_id = $(this).attr('data-user-id');
-    var html = addUserTogroup(user, user_id);
+    var html = addUserTogroup(user_name, user_id);
     $("#chat-group-users").append(html);
   });
 
   $(document).on("click", ".user-search-remove", function () {
-    // console.log(this.parent());
-    // var input = $(this);
-    // var input2 = $input.parent();
-    // console.log(input2);
-    // $input.remove();
-
-    // $input = $(this);
     $(this).parent().remove();
   });
-
 });
