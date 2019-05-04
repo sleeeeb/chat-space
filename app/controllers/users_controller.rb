@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
     @users = User.where('name LIKE(?)', "%#{params[:keyword]}%") if params[:keyword].present?
     respond_to do |format|
-
     format.json
  
   end
