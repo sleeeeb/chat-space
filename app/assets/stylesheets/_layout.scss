@@ -123,6 +123,10 @@ $alert_orange: #F35500;
           font-size: 14px;
           margin-bottom: 10px;
         }
+        .lower-message__image{
+          object-fit:contain;
+          width:200px;
+        }
       }
     }
 
