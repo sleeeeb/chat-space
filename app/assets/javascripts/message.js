@@ -1,9 +1,8 @@
 $(function () {
-  // function buildHTML(message) {
-
-  function buildHTML(message) {
+  function buildMessageHTML(message) {
+    var image = ''
     if (message.image.url) {
-     var image = `<img class="lower-message__image" src="${message.image.url}" alt="Fh000001"></img> `;
+      var image = `<img class="lower-message__image" src="${message.image.url}" alt="Fh000001"></img> `;
     }
 
     var html =
@@ -21,10 +20,10 @@ $(function () {
       </h1>
       ${image}
       `
-      return html;
+    return html;
   }
 
-  $('#new_message').on('submit', function(e){
+  $('#new_message').on('submit', function (e) {
     e.preventDefault();
     var formData = new FormData(this);
     var href = window.location.href;
@@ -36,20 +35,20 @@ $(function () {
       processData: false,
       contentType: false
     })
-    .done(function (data) {
-      var html = buildHTML(data);
-      $('.message').append(html)
-      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'slow');
-      document.getElementById("new_message").reset();
-    })
-    .fail(function () {
-      alert('投稿に失敗しました');
-    })
+      .done(function (message) {
+        var html = buildMessageHTML(message);
+        $('.message').append(html)
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'slow');
+        document.getElementById("new_message").reset();
+      })
+      .fail(function () {
+        alert('投稿に失敗しました');
+      })
   })
 
   var reloadMessages = function () {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-    lastMessage=$(".message-text").filter(":last");
+    lastMessage = $(".message-text").filter(":last");
     last_message_id = lastMessage.attr('data-id')
     $.ajax({
       url: 'api/messages',
@@ -59,19 +58,25 @@ $(function () {
       //dataオプションでリクエストに値を含める
       data: { id: last_message_id }
     })
-    .done(function (data) {
-      if (data.length !== 0) {
-        data.forEach(function (message) {
-          var html = buildHTML(message);
-          $('.message').append(html)
-        });
-        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'slow');
-      }
-    })
+      .done(function (messages) {
+        if (messages.length !== 0) {
+          messages.forEach(function (message) {
+            var html = buildMessageHTML(message);
+            $('.message').append(html)
+          });
+          $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'slow');
+        }
+      })
 
-    .fail(function () {
-      alert('投稿に失敗しました');
-    });
+      .fail(function () {
+        alert('投稿に失敗しました');
+      });
   };
   setInterval(reloadMessages, 5000);
 });
+
+
+
+
+
+
