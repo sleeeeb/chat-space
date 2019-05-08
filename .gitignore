@@ -21,9 +21,7 @@ doc/
 .idea
 .secret
 log/development.log
-log/development.log
 .DS_Store
-.DS_Store
-.DS_Store
-.DS_Store
-.DS_Store
+config/secrets.yml
+config/secrets.yml
+config/secrets.yml
