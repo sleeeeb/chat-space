@@ -15,7 +15,7 @@ $(function () {
       ${message.created_at}
       </h1>
       </div>
-      <h1 class="message-text",data-id=${message.id}>
+      <h1 class="message-text" data-id=${message.id}>
       ${message.content}
       </h1>
       ${image}
@@ -48,30 +48,34 @@ $(function () {
   })
 
   var reloadMessages = function () {
-    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     lastMessage = $(".message-text").filter(":last");
     last_message_id = lastMessage.attr('data-id')
-    $.ajax({
-      url: 'api/messages',
-      //ルーティングで設定した通りhttpメソッドをgetに指定
-      type: 'get',
-      dataType: 'json',
-      //dataオプションでリクエストに値を含める
-      data: { id: last_message_id }
-    })
-      .done(function (messages) {
-        if (messages.length !== 0) {
-          messages.forEach(function (message) {
-            var html = buildMessageHTML(message);
-            $('.message').append(html)
-          });
-          $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'slow');
-        }
+    if (lastMessage.attr('data-id')) {
+    
+      //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+      // lastMessage = $(".message-text").filter(":last");
+      // last_message_id = lastMessage.attr('data-id')
+      $.ajax({
+        url: 'api/messages',
+        //ルーティングで設定した通りhttpメソッドをgetに指定
+        type: 'get',
+        dataType: 'json',
+        //dataオプションでリクエストに値を含める
+        data: { id: last_message_id }
       })
-
-      .fail(function () {
-        alert('投稿に失敗しました');
-      });
+        .done(function (messages) {
+          if (messages.length !== 0) {
+            messages.forEach(function (message) {
+              var html = buildMessageHTML(message);
+              $('.message').append(html)
+            });
+            $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'slow');
+          }
+        })
+        .fail(function () {
+          alert('更新に失敗しました');
+        });
+    }
   };
   setInterval(reloadMessages, 5000);
 });

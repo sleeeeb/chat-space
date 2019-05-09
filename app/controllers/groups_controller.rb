@@ -2,7 +2,8 @@ class GroupsController < ApplicationController
     before_action :set_group, only: [:edit, :update]
 
   def index
-    @groups=current_user.groups.all
+    # @groups=current_user.groups.all.order(group.messages.last.id)
+    @groups=Group.includes(:messages).order("messages.created_at DESC") & current_user.groups
     @message=Message.new
   end
 
@@ -18,7 +19,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @group.users << current_user
+    # @group.users << current_user
   end
 
   def update
