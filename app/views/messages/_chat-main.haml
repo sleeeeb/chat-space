@@ -9,7 +9,7 @@
     = render 'message'
 
   .form
-    = form_for [@group, @message]  do |f|
+    = form_for do |f|
       .new-message
         .input-box
           = f.text_field :content, class: 'input-box__text', placeholder: 'type a message',id: 'new_message'
@@ -19,3 +19,5 @@
               = f.file_field :image, class: 'image-label__input'
         = f.submit 'Send', class: 'new-message__submit-btn'
 
+
+            = addresses_form.hidden_field :content_id,value:addresses_form.index+1
